@@ -11,12 +11,16 @@
         <item name="colorPrimaryDark">@color/theme_color</item>
         <item name="colorAccent">@color/theme_color</item>
         <!--<item name="theme_background">#dcdee3</item>-->
-
-        <item name="android:windowIsTranslucent">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="fitSystemWindow">false</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
     </style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="BaseTheme.Light">
+
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 

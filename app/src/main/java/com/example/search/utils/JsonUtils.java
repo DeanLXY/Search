@@ -20,7 +20,7 @@ public class JsonUtils {
     public static <E> List<E> fromJson2List(String json, Class<E> clazz) {
         Gson gson = new Gson();
 
-        Type type = new TypeToken<List<E>>().getType();
+        Type type = new TypeToken<List<E>>(){}.getType();
         return (List<E>) gson.fromJson(json, type);
     }
 }

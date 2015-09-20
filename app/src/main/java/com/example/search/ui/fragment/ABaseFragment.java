@@ -2,7 +2,6 @@ package com.example.search.ui.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +12,8 @@ import com.example.search.ui.activity.BaseActivity;
 
 /**
  * Created by wxj on 2015-9-20.
+ * ｛@link layoutResourceID()}
+ * {@link #layoutInit(LayoutInflater, Bundle)}
  */
 public abstract class ABaseFragment extends Fragment {
 
@@ -58,8 +59,15 @@ public abstract class ABaseFragment extends Fragment {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
+    public ViewGroup getRootView() {
+        return rootView;
+    }
+
+    protected View findViewById(int id) {
+        return rootView.findViewById(id);
+    }
+
     void _layoutInit(LayoutInflater inflater, Bundle savedInstanceSate) {
-        //TODO
         emptyLayout = rootView.findViewById(R.id.layoutEmpty);
         if (emptyLayout != null) {
             View reloadView = emptyLayout.findViewById(R.id.layoutReload);
@@ -94,7 +102,6 @@ public abstract class ABaseFragment extends Fragment {
      * 用于加载当前页面，预加载页面延迟加载
      */
     private void requestData() {
-
     }
 
     public void setContentEmpty(boolean empty) {
@@ -104,6 +111,7 @@ public abstract class ABaseFragment extends Fragment {
     public boolean isContentEmpty() {
         return contentEmpty;
     }
+
     /**
      * 返回数据是否空
      *
@@ -113,6 +121,7 @@ public abstract class ABaseFragment extends Fragment {
     protected boolean resultIsEmpty(String result) {
         return result == null ? true : false;
     }
+
     protected void setViewOnClick(View v) {
         if (v == null)
             return;

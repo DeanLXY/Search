@@ -16,6 +16,7 @@ import java.util.HashMap;
 
 /**
  * Created by wxj on 2015-9-20.
+ * {@link #isDestory 2015年9月20日 16:46:58}
  */
 public class BaseActivity extends AppCompatActivity {
 
@@ -25,10 +26,7 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         fragmentRefs = new HashMap<String, WeakReference<ABaseFragment>>();
-
-
         // 如果设备有实体MENU按键，overflow菜单不会再显示
         ViewConfiguration viewConfiguration = ViewConfiguration.get(this);
         if (viewConfiguration.hasPermanentMenuKey()) {
@@ -47,11 +45,13 @@ public class BaseActivity extends AppCompatActivity {
     public void setContentView(int layoutResID) {
         setContentView(View.inflate(this, layoutResID, null));
     }
+
     @Override
     public void setContentView(View view, ViewGroup.LayoutParams params) {
         super.setContentView(view, params);
         rootView = view;
     }
+
     @Override
     public void setContentView(View view) {
         super.setContentView(view, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -61,6 +61,11 @@ public class BaseActivity extends AppCompatActivity {
         if (mToolbar != null)
             setSupportActionBar(mToolbar);
     }
+
+    public Toolbar getToolbar() {
+        return mToolbar;
+    }
+
     View getRootView() {
         return rootView;
     }
@@ -73,4 +78,14 @@ public class BaseActivity extends AppCompatActivity {
         fragmentRefs.remove(tag);
     }
 
+    //2015年9月20日 16:46:37
+    private boolean isDestory;
+
+    public void setDestory(boolean destory) {
+        this.isDestory = destory;
+    }
+
+    public boolean isDestory() {
+        return isDestory;
+    }
 }
