@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <item name="layoutEmpty" type="id"/>
+    <item name="layoutReload" type="id"/>
+    <item name="layoutLoading" type="id"/>
+    <item name="layoutRefresh" type="id"/>
+    <item name="layoutContent" type="id"/>
+
+</resources>

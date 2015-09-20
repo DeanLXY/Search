@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Administrator\Desktop\新建文件夹\Search\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\Administrator\Desktop\新建文件夹\Search\app\build\intermediates\pre-dexed\debug\classes-bfce9259db905f47470a4b52c1929273c5e4a8ac.jar" />
+    </item>
+
+</items>

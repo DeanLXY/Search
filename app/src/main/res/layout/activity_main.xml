@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
+    android:background="@color/white" >
+
+    
+         <LinearLayout
+                android:id="@+id/tab"
+		        android:layout_width="match_parent"
+		        android:layout_height="40dp"
+		        android:orientation="horizontal"
+		        android:background="@color/title_color">
+		        <TextView 
+		            android:id="@+id/pager_one"
+		            android:layout_width="0dp"
+		            android:layout_weight="1"
+		            android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+           		   android:text="@string/app_name"/>
+		        <TextView 
+		            android:id="@+id/pager_two"
+		            android:layout_width="0dp"
+		            android:layout_weight="1"
+		            android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+		            android:text="推荐"/>
+		        <TextView 
+		            android:id="@+id/pager_three"
+		            android:layout_width="0dp"
+		            android:layout_weight="1"
+		            android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+		            android:text="历史"/>
+		        <TextView 
+		            android:id="@+id/pager_four"
+		            android:layout_width="0dp"
+		            android:layout_weight="1"
+		            android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+		            android:text="收藏"/>
+		        <TextView 
+		            android:id="@+id/pager_five"
+		            android:layout_width="0dp"
+		            android:layout_weight="1"
+		            android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+		            android:text="账户"/>
+		        
+		    </LinearLayout> 
+    <View
+        android:id="@+id/split" 
+        style="@style/horizontal_view_style"
+        android:layout_below="@id/tab"/>
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_below="@id/split"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+               
+
+        <!-- <android.support.v4.view.PagerTabStrip
+            android:id="@+id/pagertab"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            />   -->
+          
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

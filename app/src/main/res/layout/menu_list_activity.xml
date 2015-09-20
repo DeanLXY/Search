@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/title_color">
+        
+        <ImageButton 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:src="@drawable/ic_launcher"/>
+        
+        <TextView 
+            android:id="@+id/title"
+            style="@style/title_style"
+            android:layout_gravity="center_vertical"
+             android:layout_width="0dp"
+            android:layout_weight="3"
+            android:text="麦当劳"/>
+        
+         <Button
+            android:id="@+id/collect_app"
+             android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/button_backgroud"
+            android:text="收藏" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/title_color">
+        
+        <ListView 
+            android:id="@+id/menu_list"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            
+        </ListView>
+        <ListView 
+            android:id="@+id/menu_detail"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="2"/>
+    </LinearLayout>
+
+</LinearLayout>

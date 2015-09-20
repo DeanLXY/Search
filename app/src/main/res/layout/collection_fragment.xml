@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:layout_marginTop="15dp"
+    android:orientation="vertical" >
+    
+   <LinearLayout 
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:background="@drawable/item_backgroud">
+    
+        <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_margin="5dp"
+        android:background="#ffffff">
+        
+         <TextView 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="添加广告等部分"/>
+         <TextView
+            android:id="@+id/search_count"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="搜索的次数"/>
+         
+     </RelativeLayout>
+
+   <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="15dp"
+    android:descendantFocusability= "blocksDescendants"  
+    android:background="@drawable/item_backgroud" >
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_launcher" />
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/icon" >
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/title_style"
+            android:text="标题" />
+
+        <TextView
+            android:id="@+id/count"
+            style="@style/content_style"
+            android:layout_below="@id/title"
+            android:text="次数" />
+
+        <Button
+            android:id="@+id/collect_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_backgroud"
+            android:text="收藏" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        style="@style/content_style"
+        android:layout_below="@id/title_layout"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/icon"
+        android:text="内容" />
+
+</RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="15dp"
+    android:descendantFocusability= "blocksDescendants"  
+    android:background="@drawable/item_backgroud" >
+
+    <ImageView
+        android:id="@+id/icon1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_launcher" />
+
+    <RelativeLayout
+        android:id="@+id/title_layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/icon1" >
+
+        <TextView
+            android:id="@+id/title1"
+            style="@style/title_style"
+            android:text="标题" />
+
+        <TextView
+            android:id="@+id/count1"
+            style="@style/content_style"
+            android:layout_below="@id/title1"
+            android:text="次数" />
+
+        <Button
+            android:id="@+id/collect_app1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_backgroud"
+            android:text="收藏" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/content1"
+        android:layout_width="match_parent"
+        style="@style/content_style"
+        android:layout_below="@id/title_layout1"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/icon1"
+        android:text="内容" />
+
+</RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="15dp"
+    android:descendantFocusability= "blocksDescendants"  
+    android:background="@drawable/item_backgroud" >
+
+    <ImageView
+        android:id="@+id/icon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_launcher" />
+
+    <RelativeLayout
+        android:id="@+id/title_layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/icon2" >
+
+        <TextView
+            android:id="@+id/title2"
+            style="@style/title_style"
+            android:text="标题" />
+
+        <TextView
+            android:id="@+id/count2"
+            style="@style/content_style"
+            android:layout_below="@id/title2"
+            android:text="次数" />
+
+        <Button
+            android:id="@+id/collect_app2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_backgroud"
+            android:text="收藏" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/content2"
+        android:layout_width="match_parent"
+        style="@style/content_style"
+        android:layout_below="@id/title_layout2"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/icon2"
+        android:text="内容" />
+
+</RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
