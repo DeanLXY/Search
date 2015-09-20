@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:background="?attr/colorPrimary"
     android:minHeight="?attr/actionBarSize"
+    android:fitsSystemWindows="?attr/fitSystemWindow"
     tools:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     tools:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 <!-- From: file:/C:/Users/Administrator/Desktop/新建文件夹/Search/app/src/main/res/layout/layout_toolbar.xml -->

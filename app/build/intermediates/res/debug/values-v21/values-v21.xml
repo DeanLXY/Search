@@ -2,7 +2,7 @@
 <resources>
     <!-- From: file:/C:/Users/Administrator/Desktop/新建文件夹/Search/app/src/main/res/values-v21/styles.xml -->
     <eat-comment/>
-    <style name="AppBaseTheme" parent="BaseTheme.Light">
+    <style name="AppTheme" parent="BaseTheme.Light">
 
         <item name="android:statusBarColor">@color/theme_color</item>
         <!--Translucent system bars-->

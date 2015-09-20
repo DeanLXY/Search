@@ -2,5 +2,6 @@
 <resources>]
     <declare-styleable name="material_theme">
         <attr name="fitSystemWindow" format="boolean"></attr>
+        <attr name="theme_background" format="reference|color"></attr>
     </declare-styleable>
 </resources>

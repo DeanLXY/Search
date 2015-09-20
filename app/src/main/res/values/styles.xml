@@ -7,6 +7,7 @@
     <style name="BaseTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Actionbar color -->
         <item name="colorPrimary">@color/theme_color</item>
+        <item name="theme_background">@color/theme_background</item>
         <!-- Status bar color-->
         <item name="colorPrimaryDark">@color/theme_color</item>
         <item name="colorAccent">@color/theme_color</item>
@@ -15,7 +16,7 @@
         <item name="android:windowNoTitle">true</item>
         <item name="windowNoTitle">true</item>
         <item name="fitSystemWindow">false</item>
-        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
     <!-- Application theme. -->
