@@ -4,11 +4,13 @@ import android.app.Dialog;
 import android.content.Context;
 
 import com.example.search.utils.DialogUtils;
+import com.example.search.utils.JsonUtils;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -45,10 +47,11 @@ public class HttpManager {
         this(context, callBack, true);
     }
 
-    public <T> void post(String url, Map<String, String> params, Class<T> clazz) {
+    public <T> void post(String url, Map<String, String> params, final Class<T> clazz) {
         prepareDialog();
         try {
             HttpUtils.post(url, HttpUtils.parse2Json(params), new Callback() {
+
                 @Override
                 public void onFailure(Request request, IOException e) {
                     dismissDialog();
@@ -60,8 +63,21 @@ public class HttpManager {
                 @Override
                 public void onResponse(Response response) throws IOException {
                     dismissDialog();
+                    T t = null;
+                    List<T> tList = null;
                     if (response.isSuccessful()) {
-                        response.body().string();
+                        String json = response.body().string();
+                        if (json.startsWith("{")) {
+                            t = JsonUtils.fromJson(json, clazz);
+                        } else if (json.startsWith("[")) {
+                            tList = JsonUtils.fromJson2List(json, clazz);
+                        }
+                        if (callBack != null) {
+                            if (t != null)
+                                callBack.onResponse(t);
+                            else
+                                callBack.onResponse(tList);
+                        }
                     } else {
                         throw new IOException("Unexpected code " + response);
                     }
