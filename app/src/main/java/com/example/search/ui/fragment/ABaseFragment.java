@@ -96,12 +96,18 @@ public abstract class ABaseFragment extends Fragment {
             setViewVisiable(contentLayout, View.VISIBLE);
         }
     }
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
+        if (savedInstanceState == null)
+            requestData();
+    }
     /**
      * 刷新数据实用
      * 用于加载当前页面，预加载页面延迟加载
      */
-    private void requestData() {
+    public void requestData() {
     }
 
     public void setContentEmpty(boolean empty) {

@@ -2,11 +2,74 @@
 <items version="2" >
 
     <item
+        jar="D:\Android\AsWorkspace\Search\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="D:\Android\AsWorkspace\Search\app\build\intermediates\pre-dexed\debug\classes-9ca18f330c501cd37c8d6fed75c36d8a4dea4b5a.jar" />
+    </item>
+    <item
         jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
         jumboMode="false"
         revision="22.0.0"
         sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="C:\Users\Administrator\Desktop\新建文件夹\Search\app\build\intermediates\pre-dexed\debug\library-2.4.0-dd460f45d27a359687729c3c169358b1eda3100b.jar" />
+        <dex dex="D:\Android\AsWorkspace\Search\app\build\intermediates\pre-dexed\debug\library-2.4.0-dd460f45d27a359687729c3c169358b1eda3100b.jar" />
+    </item>
+    <item
+        jar="D:\Android\AsWorkspace\Search\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="D:\Android\AsWorkspace\Search\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-92e9e7d1af89e53d8d928cfb6eeede56ce796fe9.jar" />
+    </item>
+    <item
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="D:\Android\AsWorkspace\Search\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-87f5a75e1de9f212162c85b163eaa9811670bbdf.jar" />
+    </item>
+    <item
+        jar="D:\Android\AsWorkspace\Search\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="D:\Android\AsWorkspace\Search\app\build\intermediates\pre-dexed\debug\classes-30bb756b091b2acbf0b2ec3652196afe2cbe4ef2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="D:\Android\AsWorkspace\Search\app\build\intermediates\pre-dexed\debug\gson-2.2.4-752a4694a6e7953de1b9e1ac68ee96a302f761f3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.4.0\5b72bf48563ea8410e650de14aa33ff69a3e8c35\okio-1.4.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
+        <dex dex="D:\Android\AsWorkspace\Search\app\build\intermediates\pre-dexed\debug\okio-1.4.0-a05532bc788a554b357d24e9f35162ad99c67f00.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.4.0\40340c0748190fe897baf7bffbc1b282734294e5\okhttp-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="D:\Android\AsWorkspace\Search\app\build\intermediates\pre-dexed\debug\okhttp-2.4.0-1a88588d86205825a3225019b657d26fc4d4e22f.jar" />
+    </item>
+    <item
+        jar="D:\Android\AsWorkspace\Search\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="D:\Android\AsWorkspace\Search\app\build\intermediates\pre-dexed\debug\classes-db221f588c784dd5dd310ed95d408e963800cee2.jar" />
+    </item>
+    <item
+        jar="D:\Android\AsWorkspace\Search\app\build\intermediates\exploded-aar\com.afollestad\material-dialogs\0.7.6.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="1c83e45c56a824bc54f276b2fa071f1914cceba7">
+        <dex dex="D:\Android\AsWorkspace\Search\app\build\intermediates\pre-dexed\debug\classes-0010eba8aa9ff2a4b07289434896153b19e4220c.jar" />
     </item>
 
 </items>
