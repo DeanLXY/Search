@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
@@ -90,11 +91,12 @@ public class MenuListActivity extends BaseActivity {
 
 
         mMenuList = (ListView) findViewById(R.id.menu_list);
+//        mMenuList.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         mMenuDetail = (ListView) findViewById(R.id.menu_detail);
 
         MenuListTitleAdapter menuAdapter = new MenuListTitleAdapter(this, arr);
         mMenuList.setAdapter(menuAdapter);
-
+        mMenuList.setItemChecked(0,true);
         list = new ArrayList<String>();
 
         for (int j = 0; j < arr8.length; j++) {
@@ -134,13 +136,14 @@ public class MenuListActivity extends BaseActivity {
 
                     for (int i = 0; i < mMenuList.getChildCount(); i++) {
                         if (i == nums.indexOf(firstVisibleItem)) {
-                            mMenuList.getChildAt(i).setBackgroundColor(
-                                    getResources().getColor(R.color.theme_color));
-                            mMenuDetail.getChildAt(0).setBackgroundColor(
-                                    getResources().getColor(R.color.title_color));
+                            mMenuList.setItemChecked(i,true);
+//                            mMenuList.getChildAt(i).setBackgroundColor(
+//                                    getResources().getColor(R.color.theme_color));
+//                            mMenuDetail.getChildAt(0).setBackgroundColor(
+//                                    getResources().getColor(R.color.title_color));
                         } else {
-                            mMenuList.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
-                            mMenuDetail.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
+//                            mMenuList.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
+//                            mMenuDetail.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
                         }
 
 
@@ -154,9 +157,11 @@ public class MenuListActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
+                mMenuList.setItemChecked(position,true);
                 for (int i = 0; i < mMenuList.getChildCount(); i++) {
                     if (i == position) {
-                        view.setBackgroundColor(getResources().getColor(R.color.theme_color));
+//                        view.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                        mMenuList.setItemChecked(position,true);
                     } else {
                         view.setBackgroundColor(Color.TRANSPARENT);
                     }
@@ -169,5 +174,17 @@ public class MenuListActivity extends BaseActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        menu.add(0,0,0,"收藏");
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == 0){
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

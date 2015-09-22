@@ -2,8 +2,6 @@
 <resources>
 
     <style name="AppTheme" parent="BaseTheme.Light">
-        <item name="android:selectableItemBackground">@drawable/selector_list_holo</item>
-
         <!--Translucent system bars-->
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowTranslucentStatus">true</item>

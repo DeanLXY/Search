@@ -57,7 +57,7 @@ public class ApplationFragment extends ASwiperefreshDelayFragment {
     @Override
     protected void layoutInit(LayoutInflater inflater, Bundle savedInstanceSate) {
         super.layoutInit(inflater, savedInstanceSate);
-        layoutAd = inflater.inflate(R.layout.layout_ad_application,null);
+        layoutAd = inflater.inflate(R.layout.layout_ad_application, null);
         mSearchCount = (TextView) layoutAd.findViewById(R.id.search_count);
         mAppList = (ListView) findViewById(R.id.app_list);
         mAppList.addHeaderView(layoutAd);
@@ -110,12 +110,14 @@ public class ApplationFragment extends ASwiperefreshDelayFragment {
         HttpManager http = new HttpManager(getActivity(), new IRequestCallBack() {
             @Override
             public void onFailure(int requestCode, String message) {
-                getRefreshLayout().setRefreshing(false);
+                if (getRefreshLayout().isRefreshing())
+                    getRefreshLayout().setRefreshing(false);
             }
 
             @Override
             public void onResponse(Object t) {
-                getRefreshLayout().setRefreshing(false);
+                if (getRefreshLayout().isRefreshing())
+                    getRefreshLayout().setRefreshing(false);
                 Devices devices = (Devices) t;
                 list.add(devices);
                 adapter.notifyDataSetChanged();

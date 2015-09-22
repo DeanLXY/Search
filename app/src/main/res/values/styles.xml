@@ -16,7 +16,9 @@
         <item name="android:windowNoTitle">true</item>
         <item name="windowNoTitle">true</item>
         <item name="fitSystemWindow">false</item>
-        <item name="android:windowIsTranslucent">true</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
+        <item name="selectableItemBackground">@drawable/selectable_background</item>
     </style>
 
     <!-- Application theme. -->
