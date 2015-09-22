@@ -21,7 +21,7 @@ import java.util.HashMap;
 public class BaseActivity extends AppCompatActivity {
 
     private View rootView;
-    private Toolbar mToolbar;
+    protected Toolbar mToolbar;
     private HashMap<String, WeakReference<ABaseFragment>> fragmentRefs;
 
     @Override

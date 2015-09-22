@@ -2,10 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="5dp"
-    android:layout_marginStart="5dp"
-    android:layout_marginTop="15dp"
-    android:descendantFocusability= "blocksDescendants"  >
+    android:background="@drawable/timeline_publish_single_normal"
+    android:descendantFocusability="blocksDescendants">
 
     <com.loopj.android.image.SmartImageView
         android:id="@+id/icon"
@@ -15,8 +13,8 @@
         android:layout_marginEnd="5dp"
         android:layout_marginStart="5dp"
         android:adjustViewBounds="true"
-        android:maxWidth="50dp"
         android:maxHeight="50dp"
+        android:maxWidth="50dp"
         android:src="@drawable/ic_launcher" />
 
     <RelativeLayout
@@ -24,9 +22,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_toEndOf="@id/icon" >
-       
-       <Button
+        android:layout_toEndOf="@id/icon">
+
+        <Button
             android:id="@+id/collect_app"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,32 +32,32 @@
             android:layout_marginRight="3dp"
             android:background="@drawable/button_backgroud"
             android:text="收藏" />
+
         <TextView
             android:id="@+id/title"
             style="@style/title_style"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@id/collect_app"
-            android:text="菜名"/>
+            android:text="菜名" />
 
         <TextView
             android:id="@+id/count"
             style="@style/content_style"
             android:layout_below="@id/title"
-            android:textSize="13dp"
-            android:text="点餐次数" />
+            android:text="点餐次数"
+            android:textSize="13dp" />
 
 
     </RelativeLayout>
-    
+
     <TextView
         android:id="@+id/content"
-        android:layout_width="wrap_content"
         style="@style/content_style"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/title_layout"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@id/icon"
-        android:layout_below="@id/title_layout"
         android:text="价格" />
-    
-    
+
 
 </RelativeLayout><!-- From: file:/D:/Android/AsWorkspace/Search/app/src/main/res/layout/list_view_item.xml -->

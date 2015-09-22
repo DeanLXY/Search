@@ -7,4 +7,6 @@
     <item name="layoutRefresh" type="id"/>
     <item name="layoutContent" type="id"/>
 
+    <item name="layoutSwiperefresh" type="id"/>
+
 </resources>

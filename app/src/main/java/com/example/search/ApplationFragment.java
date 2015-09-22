@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,11 +31,14 @@ import com.example.search.network.IRequestCallBack;
 import com.example.search.sql.Devices;
 import com.example.search.sql.DevicesDao;
 import com.example.search.ui.fragment.ABaseFragment;
+import com.example.search.ui.fragment.ARefreshFragment;
+import com.example.search.ui.fragment.ASwiperefreshDelayFragment;
+import com.example.search.utils.DialogUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-public class ApplationFragment extends ABaseFragment {
+public class ApplationFragment extends ASwiperefreshDelayFragment {
 
     private ListView mAppList;
     private TextView mSearchCount;
@@ -43,6 +47,7 @@ public class ApplationFragment extends ABaseFragment {
     private List<Devices> list = new ArrayList<Devices>();
     DevicesDao dao;
     private String path;
+    private View layoutAd;
 
     @Override
     protected int layoutResourceID() {
@@ -52,8 +57,10 @@ public class ApplationFragment extends ABaseFragment {
     @Override
     protected void layoutInit(LayoutInflater inflater, Bundle savedInstanceSate) {
         super.layoutInit(inflater, savedInstanceSate);
-        mSearchCount = (TextView) findViewById(R.id.search_count);
+        layoutAd = inflater.inflate(R.layout.layout_ad_application,null);
+        mSearchCount = (TextView) layoutAd.findViewById(R.id.search_count);
         mAppList = (ListView) findViewById(R.id.app_list);
+        mAppList.addHeaderView(layoutAd);
         adapter = new MyListViewAdapter(getActivity(), list);
         mSearchCount.setText("共搜索出" + list.size() + "条");
         dao = new DevicesDao(getActivity());
@@ -65,19 +72,9 @@ public class ApplationFragment extends ABaseFragment {
                 // 获取本机手机号
                 TelephonyManager phoneMgr = (TelephonyManager) getActivity()
                         .getSystemService(getActivity().TELEPHONY_SERVICE);
-
-                Toast.makeText(
-                        getActivity(),
-                        "点击:" + list.get(position) + "--"
-                                + phoneMgr.getLine1Number(), Toast.LENGTH_SHORT)
-                        .show();
-
                 //http://115.28.227.2:8080/admin/app/queryTagDetail?id=YLAB00000001
                 path = "http://115.28.227.2:8080/admin/app/queryTagDetail?id=";
-
                 queryDetail(path + "YLAB00000001", null);
-
-
             }
         });
 
@@ -94,6 +91,12 @@ public class ApplationFragment extends ABaseFragment {
 
     }
 
+    @Override
+    public void onRefresh() {
+        super.onRefresh();
+        requestData();
+    }
+
     // 异步线程框架
     private void post(String phoneNumber, String deviceId, String userName,
                       String password) {
@@ -107,11 +110,12 @@ public class ApplationFragment extends ABaseFragment {
         HttpManager http = new HttpManager(getActivity(), new IRequestCallBack() {
             @Override
             public void onFailure(int requestCode, String message) {
-
+                getRefreshLayout().setRefreshing(false);
             }
 
             @Override
             public void onResponse(Object t) {
+                getRefreshLayout().setRefreshing(false);
                 Devices devices = (Devices) t;
                 list.add(devices);
                 adapter.notifyDataSetChanged();
@@ -173,5 +177,10 @@ public class ApplationFragment extends ABaseFragment {
         });
 
         return null;
+    }
+
+    @Override
+    public void onStripTabRequestData() {
+//        requestData();
     }
 }

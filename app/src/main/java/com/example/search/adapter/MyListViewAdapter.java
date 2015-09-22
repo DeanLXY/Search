@@ -79,7 +79,7 @@ public class MyListViewAdapter extends BaseAdapter {
 		 * 加载图片之后, 会在内存中缓存, 本地文件缓存
 		 * 加载图片如果失败, 会显示失败图片
 		 */
-		mViewHolder.icon.setImageUrl(devices.getLogo().toString(), R.drawable.ic_launcher, R.drawable.ic_launcher);
+//		mViewHolder.icon.setImageUrl(devices.getLogo().toString(), R.drawable.ic_launcher, R.drawable.ic_launcher);
 		
 		
 		mViewHolder.collect_app.setText("收藏");

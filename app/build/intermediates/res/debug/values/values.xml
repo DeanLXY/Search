@@ -312,6 +312,7 @@
     <item name="layoutLoading" type="id"/>
     <item name="layoutRefresh" type="id"/>
     <item name="layoutReload" type="id"/>
+    <item name="layoutSwiperefresh" type="id"/>
     <!-- From: file:/D:/Android/AsWorkspace/Search/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <item name="progress_circular" type="id"/>
