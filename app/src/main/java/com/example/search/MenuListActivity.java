@@ -1,10 +1,5 @@
 package com.example.search;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -21,6 +16,13 @@ import com.example.search.adapter.MenuListTitleAdapter;
 import com.example.search.bean.Menu;
 import com.example.search.ui.activity.BaseActivity;
 import com.example.search.utils.SystemBarUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import dev.dworks.libs.astickyheader.SimpleSectionedListAdapter;
+import dev.dworks.libs.astickyheader.SimpleSectionedListAdapter.Section;
 
 public class MenuListActivity extends BaseActivity {
 
@@ -54,6 +56,8 @@ public class MenuListActivity extends BaseActivity {
      * 用来记录每一个 1 2 3 4 5 6 在右边listview的位置；
      */
     List<Integer> nums = new ArrayList<Integer>();
+    private MenuDetailAdapter menuDetailAdapter;
+    private ArrayList<Section> sections = new ArrayList<Section>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +91,12 @@ public class MenuListActivity extends BaseActivity {
             List<String> menuDetail = menuDetails.get(arr[i]);
             String[] array = (String[]) menuDetail.toArray(new String[menuDetail.size()]);
             arr8[i] = array;
+            int secPos = 0;
+            for (int j = i; j > 0; j--) {
+                secPos += arr8[j - 1].length;
+            }
+            sections.add(new Section(secPos, arr[i]));
+            nums.add(secPos);
         }
 
 
@@ -96,7 +106,7 @@ public class MenuListActivity extends BaseActivity {
 
         MenuListTitleAdapter menuAdapter = new MenuListTitleAdapter(this, arr);
         mMenuList.setAdapter(menuAdapter);
-        mMenuList.setItemChecked(0,true);
+        mMenuList.setItemChecked(0, true);
         list = new ArrayList<String>();
 
         for (int j = 0; j < arr8.length; j++) {
@@ -105,22 +115,24 @@ public class MenuListActivity extends BaseActivity {
             }
         }
 
-        for (int i = 0; i < arr8.length; i++) {
-            if (i == 0) {
-                nums.add(0);
-            } else if (i > 0 && i < arr8.length) {
-                int num = 0;
-                for (int j = 0; j < i; j++) {
-                    num = num + arr8[j].length;
-
-                }
-                nums.add(num);
-            }
-        }
-
+//        for (int i = 0; i < arr8.length; i++) {
+//            if (i == 0) {
+//                nums.add(0);
+//            } else if (i > 0 && i < arr8.length) {
+//                int num = 0;
+//                for (int j = 0; j < i; j++) {
+//                    num = num + arr8[j].length;
+//
+//                }
+//                nums.add(num);
+//            }
+//        }
+        menuDetailAdapter = new MenuDetailAdapter(this, list);
         Log.i("ggj", "nums.size()是否等于arr8.length" + (nums.size() == arr8.length));
-
-        mMenuDetail.setAdapter(new MenuDetailAdapter(this, list));
+        SimpleSectionedListAdapter simpleSectionedGridAdapter = new SimpleSectionedListAdapter(this, menuDetailAdapter,
+                R.layout.list_item_header, R.id.header);
+        simpleSectionedGridAdapter.setSections(sections.toArray(new Section[0]));
+        mMenuDetail.setAdapter(simpleSectionedGridAdapter);
 
         mMenuDetail.setOnScrollListener(new AbsListView.OnScrollListener() {
 
@@ -132,21 +144,18 @@ public class MenuListActivity extends BaseActivity {
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem,
                                  int visibleItemCount, int totalItemCount) {
-                if (nums.contains(firstVisibleItem) && mMenuList.getChildCount() > 0) {
 
+                if (nums.contains(firstVisibleItem) && mMenuList.getChildCount() > 0) {
                     for (int i = 0; i < mMenuList.getChildCount(); i++) {
                         if (i == nums.indexOf(firstVisibleItem)) {
-                            mMenuList.setItemChecked(i,true);
-//                            mMenuList.getChildAt(i).setBackgroundColor(
-//                                    getResources().getColor(R.color.theme_color));
-//                            mMenuDetail.getChildAt(0).setBackgroundColor(
-//                                    getResources().getColor(R.color.title_color));
+                            mMenuList.getChildAt(i).setBackgroundColor(
+                                    getResources().getColor(R.color.theme_color));
+                            mMenuDetail.getChildAt(0).setBackgroundColor(
+                                    getResources().getColor(R.color.title_color));
                         } else {
-//                            mMenuList.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
-//                            mMenuDetail.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
+                            mMenuList.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
+                            mMenuDetail.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
                         }
-
-
                     }
 
                 }
@@ -157,18 +166,8 @@ public class MenuListActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                mMenuList.setItemChecked(position,true);
-                for (int i = 0; i < mMenuList.getChildCount(); i++) {
-                    if (i == position) {
-//                        view.setBackgroundColor(getResources().getColor(R.color.theme_color));
-                        mMenuList.setItemChecked(position,true);
-                    } else {
-                        view.setBackgroundColor(Color.TRANSPARENT);
-                    }
-                }
-
-                mMenuDetail.setSelection(nums.get(position));
-
+//                mMenuDetail.setSelection(nums.get(position)+position);
+                mMenuDetail.smoothScrollToPosition(sections.get(position).getFirstPosition() + position);
             }
         });
 
@@ -176,13 +175,13 @@ public class MenuListActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
-        menu.add(0,0,0,"收藏");
+        menu.add(0, 0, 0, "收藏");
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == 0){
+        if (item.getItemId() == 0) {
 
         }
         return super.onOptionsItemSelected(item);

@@ -9,19 +9,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class RecommendFragment extends Fragment {
+import com.example.search.ui.fragment.ASwiperefreshDelayFragment;
+
+public class RecommendFragment extends ASwiperefreshDelayFragment {
 
      @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-    	// TODO Auto-generated method stub
     	super.onCreate(savedInstanceState);
 
     }
-     @Override
-    @Nullable
-    public View onCreateView(LayoutInflater inflater,
-    		@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
- 
-    	return inflater.inflate(R.layout.recommend_fragment, container, false);
+
+    @Override
+    protected int layoutResourceID() {
+        return R.layout.recommend_fragment;
+    }
+
+
+    @Override
+    public void onStripTabRequestData() {
+
     }
 }
